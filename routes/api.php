@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\KemendagriController;
+
+use App\Http\Controllers\API\KemendagriController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/provinces', [KemendagriController::class, 'getProvinces']);

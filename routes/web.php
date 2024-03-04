@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\BlogController;
+
+use App\Http\Controllers\Example\DropdownController;
+use App\Http\Controllers\Example\UsersController;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 /*
@@ -19,7 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('create', [Dropdown_select::class, 'index'])->name('create');
+Route::get('sampleDropDown', [DropdownController::class, 'index']);
+Route::get('create', [UsersController::class, 'create'])->name('users.create');
+Route::post('create', [UsersController::class, 'store'])->name('users.store');
 Route::post('post', function () {
     dd(request()->all());
 } )->name('post');
