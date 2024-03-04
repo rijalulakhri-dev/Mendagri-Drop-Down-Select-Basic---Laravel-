@@ -69,4 +69,6 @@ $(document).ready(function() {
       $('#reg_villages').empty();
     }
   });
+
+
 });

@@ -18,17 +18,17 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('gender');
-            $table->string('birth_place');
+            $table->string('birth_place'); // Tempat Lahir
             $table->date('date_of_birth');
-            $table->string('province_id');
-            $table->string('regency_id');
-            $table->string('district_id');
-            $table->string('village_id');
+            $table->string('province_id'); // Relasi ke Provinsi
+            $table->string('regency_id'); // Relasi ke Kabupaten
+            $table->string('district_id'); // Relasi ke Kecamatan
+            $table->string('village_id'); // Relasi ke Desa
             $table->string('address');
             $table->string('phone_number');
-            $table->string('occupation');
-            $table->string('nik_number')->nullable();
-            $table->string('kk_number')->nullable();
+            $table->string('occupation'); // Pekerjaan
+            $table->string('nik_number')->nullable(); // NIK
+            $table->string('kk_number')->nullable(); //KK
             $table->timestamps();
         });
     }

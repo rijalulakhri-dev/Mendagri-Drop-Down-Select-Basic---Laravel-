@@ -15,9 +15,20 @@
 
     </head>
     <body>
-        <h1> Sample Users Form @if (session('error'))
-            Error
-        @endif</h1>
+        <h1> Sample Users Form</h1>
+       @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        @if (session('success'))
+            <li>{{ session('success') }}</li>
+        @endif
         <form action="{{ route('users.store') }}" method="POST" >
     @csrf
     <div>
