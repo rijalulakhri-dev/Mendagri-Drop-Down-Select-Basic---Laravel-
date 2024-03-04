@@ -15,7 +15,7 @@
 
     </head>
     <body>
-<form action="">
+<form action="{{ route('post') }}" method="POST">
     @csrf
     <div>
         <label for=""> Provinsi</label>
@@ -26,19 +26,19 @@
     <div>
         <label for=""> Kabupaten</label>
         <select name="kabupaten" id="reg_regencies">
-            <option value=""> --Pilih--</option>
+           <option value=""> --PILIH--</option>
         </select>
     </div>
     <div>
         <label for=""> Kecamatan</label>
         <select name="kecamatan" id="reg_districts">
-            <option value=""> --Pilih--</option>
+            <option value=""> --PILIH--</option>
         </select>
     </div>
     <div>
         <label for=""> Desa</label>
         <select name="desa" id="reg_villages">
-            <option value=""> --Pilih--</option>
+            <option value=""> --PILIH--</option>
         </select>
     </div>
     <button type="submit">Result</button>

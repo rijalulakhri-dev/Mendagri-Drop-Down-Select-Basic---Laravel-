@@ -20,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('create', [BlogController::class, 'create'])->name('create');
+Route::post('post', function () {
+    dd(request()->all());
+} )->name('post');
