@@ -1,9 +1,13 @@
 <?php
 
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Example\DropdownController;
 use App\Http\Controllers\Example\UsersController;
+use App\Http\Controllers\PelayananController;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 
@@ -22,6 +26,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+Route::get('/pasienbaru', [PelayananController::class,'index'])->name('pasienbaru');
+
+Route::post('/process/pasienbaru', [PelayananController::class,'store'])->name('simpan_pasien');
 
 Route::get('sampleDropDown', [DropdownController::class, 'index']);
 Route::get('create', [UsersController::class, 'create'])->name('users.create');
